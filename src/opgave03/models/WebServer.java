@@ -1,5 +1,7 @@
 package opgave03.models;
 
+import java.io.File;
+
 public class WebServer {
     private Logger logger;
 
@@ -7,11 +9,11 @@ public class WebServer {
         this.logger = logger;
     }
 
-    public void handleRequest(String request) {
+    public void handleRequest(String request, RequestType requestType) {
         if (request.isEmpty()) {
-            logger.logError("Request is empty");
+            requestType.logError("Request is empty");
             return;
         }
-        logger.logInfo("Handling request: " + request);
+        requestType.logInfo("Handling request: " + request);
     }
 }

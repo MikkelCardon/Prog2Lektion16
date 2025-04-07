@@ -1,16 +1,11 @@
 package opgave03.models;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-public class Logger {
+public class Logger implements RequestType {
     public void logInfo(String message) {
-        String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][INFO] " + message;
-        System.out.println(logMessage);
+        System.out.println(RequestType.INFO + message);
     }
 
     public void logError(String message) {
-        String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][ERROR] " + message;
-        System.out.println(logMessage);
+        System.out.println(RequestType.ERROR + message);
     }
 }
